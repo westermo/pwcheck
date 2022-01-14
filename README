@@ -1,0 +1,25 @@
+= pwcheck: Minimal cmdline front-end to libpwquality =
+
+Author(s): Andreas Egeberg <andreas.egeberg@westermo.se>
+	   Albert Veli <albert.veli@westermo.se>
+
+
+== Operation ==
+
+Usage: pwcheck [-v] [-u <username>] <password>
+
+  -v  Verbose output
+  -u  Passwords based on username lowers pwquality score
+
+If the password policy is not met an error message is printed
+and EXIT_FAILURE (1) is returned. Otherwise EXIT_SUCCESS (0)
+is returned.
+
+
+== Note ==
+
+The default location of the libpwquality configuration file
+is currently used; /etc/security/pwquality.conf
+
+If needed another command line option (-c maybe) can be added to
+specify the location of the pwquality.conf file.
